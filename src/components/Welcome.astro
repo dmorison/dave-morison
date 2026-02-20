@@ -1,0 +1,225 @@
+---
+import { Image } from 'astro:assets';
+import background from '../assets/hero-background.png';
+import webDesignImage from '../assets/web-design-image.png';
+import webAnalyticsImage from '../assets/web-analytics-image.png';
+import dataAnalyticsImage from '../assets/data-analytics-image.jpg';
+import ContactForm from './ContactForm.astro';
+---
+
+<div id="container">
+	<main>
+		<section id="hero">
+			<img id="background" src={background.src} alt="" fetchpriority="high" />
+			<h1>Dave Morison - Tech Solutions</h1>
+			<h2>
+				Web Developer | Data Analyst
+			</h2>
+			<p>Helping small businesses and individuals with personalised software solutions.</p>
+			<a class="button" href="#contact">Contact Me</a>
+		</section>
+		<section id="website">
+			<div class="main-section">
+				<div class="inner-wrapper">
+					<h3>Web Development</h3>
+					<p>Responsive websites for all devices that prioratise accessibility and performance.</p>
+				</div>
+				<Image src={webDesignImage} alt="responsive website design" width={300} />
+			</div>
+		</section>
+		<section id="analytics">
+			<div class="main-section">
+				<Image src={webAnalyticsImage} alt="" width={300} />
+				<div class="inner-wrapper">
+					<h3>Web Analytics</h3>
+					<p>Taylored analytics for smarter insights using Google Analytics and customised Google Tag Manager.</p>
+				</div>
+			</div>
+		</section>
+		<section id="data">
+			<div class="main-section">
+				<div class="inner-wrapper">
+					<h3>Data Analytics</h3>
+					<p>Custom dashboards for specific needs.</p>
+				</div>
+				<div class="image-fade-wrapper"><Image src={dataAnalyticsImage} alt="data analytics illustration" width={300} /></div>
+			</div>
+		</section>
+		<section id="contact">
+			<div class="main-section">
+				<div class="inner-wrapper">
+					<h3>Contact</h3>
+					<ContactForm />
+				</div>
+			</div>
+		</section>
+	</main>
+</div>
+
+<style>
+	#container {
+		font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+		height: 100%;
+	}
+
+	main {
+		height: 100%;
+	}
+
+	#background {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 60%;
+		z-index: -1;
+	}
+
+	#hero {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		color: whitesmoke;
+		text-align: center;
+		height: 60%;
+		padding: 0;
+	}
+
+	#hero p {
+		font-size: 18px;
+	}
+
+	.main-section {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		justify-content: space-around;
+		padding: 1em;
+	}
+
+	.inner-wrapper {
+		width: 100%;
+		margin-bottom: 1em;
+	}
+
+	#website {
+		background-color: antiquewhite;
+	}
+
+	#analytics {
+		background-color: azure;
+	}
+
+	#analytics .main-section {
+		flex-direction: column-reverse;
+	}
+
+	#data {
+		background-color: blanchedalmond;
+	}
+
+	#contact {
+		background-color: #161c20;
+		color: #d8c6c6;
+	}
+
+	h1 {
+		font-size: 38px;
+		margin-top: 0.25em;
+	}
+
+	h2 {
+		margin: 0 0 1em;
+		font-weight: normal;
+		font-size: 24px;
+	}
+
+	p {
+		font-size: 16px;
+		line-height: 24px;
+		letter-spacing: -0.006em;
+		margin: 0;
+	}
+
+	.button {
+		margin-top: 2em;
+		padding: 1em 2.5em;
+		background-color: #161c20;
+		color: whitesmoke;
+		text-decoration: none;
+		border-radius: 8px;
+		font-size: 16px;
+		border: 1px solid whitesmoke;
+		transition: background-color 300ms ease, color 300ms ease;
+	}
+
+	.button:hover {
+		background-color: whitesmoke;
+		color: #161c20;
+	}
+
+	.image-fade-wrapper {
+		position: relative;
+		display: inline-block;;
+	}
+
+	.image-fade-wrapper::after {
+		content: "";
+        position: absolute;
+        display: block;
+        top: -1px;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-collapse: separate;
+		box-shadow: inset 0 0 34px 34px blanchedalmond;
+	}
+
+	@media screen and (min-width: 768px) {
+		/* #container {
+			display: flex;
+			flex-direction: column;
+		} */
+
+		h1 {
+			font-size: 58px;
+			margin-top: 0.25em;
+		}
+
+		h2 {
+			margin: 0 0 1em;
+			font-weight: normal;
+			font-size: 38px;
+		}
+
+		p {
+			font-size: 16px;
+			line-height: 24px;
+			letter-spacing: -0.006em;
+			margin: 0;
+		}
+
+		#hero p {
+			font-size: 20px;
+		}
+
+		.main-section {
+			flex-direction: row;
+			padding: 2em 0;
+		}
+
+		#analytics .main-section {
+			flex-direction: row;
+		}
+
+		.inner-wrapper {
+			width: auto;
+		}
+
+		#contact .inner-wrapper {
+			width: 500px;
+		}
+	}
+</style>
+
