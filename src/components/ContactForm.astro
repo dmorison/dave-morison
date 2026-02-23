@@ -1,9 +1,13 @@
-<form action="https://api.web3forms.com/submit" method="POST">
-    <input type="hidden" name="access_key" value="c457d652-449e-498b-8234-378f092d280a">
+---
+import { web3forms_key } from '@/config/config.json';
+---
+
+<form id="form" action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value={web3forms_key}>
     <label for="name">
         Full Name <span>*</span>
     </label>
-    <input type="text" name="name" required>
+    <input type="text" name="name" id="name" required>
     <label for="email">
         E-mail <span>*</span>
     </label>
@@ -11,7 +15,7 @@
     <label for="message">
         Message <span>*</span>
     </label>
-    <textarea name="message" required></textarea>
+    <textarea name="message" id="message" required></textarea>
     <button type="submit">Submit</button>
     <div id="result"></div>
 </form>
@@ -31,6 +35,7 @@
     }
 
     input, textarea {
+        color: #d8c6c6;
         padding: 1em;
         font-size: 1em;
         border: 1px solid #44525a;
@@ -61,7 +66,7 @@
     }
 </style>
 
-<script is:inline>
+<script is:inline define:vars={{ web3forms_key }}>
     const form = document.getElementById('form');
     const submitBtn = form.querySelector('button[type="submit"]');
     const result = document.getElementById('result');
@@ -70,7 +75,7 @@
         e.preventDefault();
 
         const formData = new FormData(form);
-        formData.append("access_key", "c457d652-449e-498b-8234-378f092d280a");
+        formData.append("access_key", web3forms_key);
 
         const originalText = submitBtn.textContent;
 

@@ -1,18 +1,17 @@
 ---
-import config from '@/config/config.json';
+import { google_tag_manager } from '@/config/config.json';
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<!-- Google tag (gtag.js) -->
-		<script type="text/partytown" async src={`https://www.googletagmanager.com/gtag/js?id=${config.google_tag_manager.gtm_id}`}></script>
-		<script type="text/partytown">
+		<script type="text/partytown" async src={`https://www.googletagmanager.com/gtag/js?id=${google_tag_manager.gtm_id}`}></script>
+		<script type="text/partytown" define:vars={{ google_tag_manager }}>
 			window.dataLayer = window.dataLayer || [];
 			function gtag(){dataLayer.push(arguments);}
 			gtag('js', new Date());
-
-			gtag('config', config.google_tag_manager.gtm_id);
+			gtag('config', google_tag_manager.gtm_id);
 		</script>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
