@@ -1,57 +1,116 @@
 ---
 import { Image } from 'astro:assets';
-import background from '../assets/hero-background.png';
-import webDesignImage from '../assets/web-design-image.png';
 import webAnalyticsImage from '../assets/web-analytics-image.png';
-import dataAnalyticsImage from '../assets/data-analytics-image.jpg';
 import ContactForm from './ContactForm.astro';
 ---
 
 <div id="container">
 	<main>
-		<section id="hero">
-			<img id="background" src={background.src} alt="" fetchpriority="high" />
-			<h1>Dave Morison - Tech Solutions</h1>
-			<h2>
-				Web Developer | Data Analyst
-			</h2>
-			<p>Helping small businesses and individuals with personalised software solutions.</p>
-			<a class="button" href="/dave-morison/#contact">Contact Me</a>
-		</section>
-		<section id="website">
-			<div class="main-section">
-				<div class="inner-wrapper">
-					<h3>Web Development</h3>
-					<p>Responsive websites for all devices that prioratise accessibility and performance.</p>
+		<div class="content">
+			<section id="hero">
+				<div class="content-block">
+					<h1>Stop Guessing<br> Start Measuring</h1>
+					<h2>
+						Dave Morison - Data and Web Analytics Consulting
+					</h2>
+					<p>Technical Digital Analytics for companies that need developer-grade data integrity.</p>
+					<a class="button" href="/dave-morison/#contact">Book a Data Audit</a>
 				</div>
-				<Image src={webDesignImage} alt="responsive website design" width={300} />
-			</div>
-		</section>
-		<section id="analytics">
-			<div class="main-section">
-				<Image src={webAnalyticsImage} alt="" width={300} />
-				<div class="inner-wrapper">
-					<h3>Web Analytics</h3>
-					<p>Taylored analytics for smarter insights using Google Analytics and customised Google Tag Manager.</p>
+				<div class="content-block">
+					<Image src={webAnalyticsImage} alt="Google Analytics dashboard" width={500} />
 				</div>
-			</div>
-		</section>
-		<section id="data">
-			<div class="main-section">
-				<div class="inner-wrapper">
-					<h3>Data Analytics</h3>
-					<p>Custom dashboards for specific needs.</p>
+			</section>
+			<section id="pitch">
+				<div class="section-inner">
+					<h3>Technical Edge</h3>
+					<p>I'll take care of the technical implementation, helping you make strategic business decisions based on accurate data.</p>
+					<div class="cards-wrapper">
+						<div class="card">
+							<div class="card-inner">
+								<div>
+									<h4>Clean Data</h4>
+									<p>I write custom scripts to get the data you need, ensuring accuracy and reliability.</p>
+								</div>
+								<Image src={webAnalyticsImage} alt="Google Analytics dashboard" width={300} />
+							</div>
+						</div>
+						<div class="card">
+							<div class="card-inner">
+								<div>
+									<h4>Performance</h4>
+									<p>I implement lean tagging, so that tracking doesn't affect your website's performance.</p>
+								</div>
+								<Image src={webAnalyticsImage} alt="Google Analytics dashboard" width={300} />
+							</div>
+						</div>
+					</div>
+					<p>With a background in web development and a passion for data, I bridge the gap between technical implementation and business insights.</p>
 				</div>
-				<div class="image-fade-wrapper"><Image src={dataAnalyticsImage} alt="data analytics illustration" width={300} /></div>
-			</div>
-		</section>
+			</section>
+			<section id="services">
+				<h3>Services</h3>
+				<div class="cards-wrapper">
+					<div class="card">
+						<h4>The Foundation</h4>
+						<p><strong>GA4 and GTM setup from scratch</strong></p>
+						<ul>
+							<li>Install GTM and configure GA4</li>
+							<li>Create one "source of truth" dashboard</li>
+						</ul>
+					</div>
+					<div class="card">
+						<h4>The "Tracking Rescue"</h4>
+						<p><strong>Technical audit - clean up and optimise</strong></p>
+						<ul>
+							<li>Audit current scripts</li>
+							<li>Find duplicate tags</li>
+							<li>Fix broken event triggers</li>
+						</ul>
+					</div>
+					<div class="card">
+						<h4>Custom GTM Framework</h4>
+						<p><strong>Create a reusable Data Layer for more complex tracking</strong></p>
+						<ul>
+							<li>Set up the Data Layer</li>
+							<li>Configure custom variables and triggers</li>
+							<li>Implement reusable tracking logic</li>
+						</ul>
+					</div>
+					<div class="card">
+						<h4>The Visualization</h4>
+						<p><strong>Custom dashboards</strong></p>
+						<ul>
+							<li>Looker Studio</li>
+							<li>Tableau</li>
+							<li>Power BI</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+			<section id="tech">
+				<h3>Tech Stack</h3>
+				<ul>
+					<li><strong>Google Analytics 4</strong> - The latest version of Google's web analytics platform.</li>
+					<li><strong>Google Tag Manager</strong> - A tag management system that allows you to easily add and manage tracking scripts on your website.</li>
+					<li><strong>BigQuery</strong> - A fast, fully managed data warehouse for analytics.</li>
+					<li><strong>Looker Studio</strong> - A powerful data visualization tool for creating custom dashboards.</li>
+					<li><strong>Tableau</strong> - A leading data visualization software for creating interactive dashboards.</li>
+					<li><strong>Power BI</strong> - Microsoft's business analytics service for creating reports and dashboards.</li>
+				</ul>
+			</section>
+		</div>
 		<section id="contact">
-			<div class="main-section">
-				<div class="inner-wrapper">
-					<h3>Contact</h3>
-					<ContactForm />
-				</div>
+			<div class="contact-inner">
+				<h3>Contact</h3>
+				<ContactForm />
 			</div>
+			
+			<!-- <div class="main-section">
+				<div class="inner-wrapper">
+					
+					
+				</div>
+			</div> -->
 		</section>
 	</main>
 </div>
@@ -59,43 +118,62 @@ import ContactForm from './ContactForm.astro';
 <style>
 	#container {
 		font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
-		height: 100%;
+		color: #012C3C;
 	}
 
-	main {
+	/* main {
 		height: 100%;
+	} */
+	.content {
+		height: 100%;
+		background: linear-gradient(to bottom, #9BC0DA, #ffffff);
 	}
 
-	#background {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 60%;
-		z-index: -1;
+	section {
+		padding: 2em;
+	}
+
+	#pitch .section-inner {
+		background-color: #ffffff;
+		padding: 1.5em;
+		border-radius: 16px;
+	}
+
+	.cards-wrapper {
+		display: flex;
+		flex-direction: row;
+		gap: 1em;
+		margin: 1em 0;
+	}
+
+	.card {
+		flex: 1;
+		background-color: #E8F5FD;
+		padding: 1em;
+		border-radius: 8px;
+	}
+
+	.card-inner {
+		display: flex;
+		flex-direction: row;
+	}
+
+	.card-inner > div {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
 	}
 
 	#hero {
 		display: flex;
-		flex-direction: column;
-		align-items: center;
+		/* flex-direction: column; */
 		justify-content: center;
-		color: whitesmoke;
-		text-align: center;
-		height: 60%;
-		padding: 0;
+		/* color: whitesmoke; */
+		/* padding: 2em; */
 	}
 
 	#hero p {
 		font-size: 18px;
-	}
-
-	.main-section {
-		display: flex;
-		align-items: center;
-		flex-direction: column;
-		justify-content: space-around;
-		padding: 1em;
 	}
 
 	.inner-wrapper {
@@ -103,36 +181,54 @@ import ContactForm from './ContactForm.astro';
 		margin-bottom: 1em;
 	}
 
-	#website {
-		background-color: antiquewhite;
+	#pitch {
+		/* background-color: #a5e1de; */
 	}
 
-	#analytics {
-		background-color: azure;
+	#services {
+		/* background-color: #9ac7a6; */
 	}
 
-	#analytics .main-section {
+	#services .card {
+		background-color: #ffffff;
+	}
+
+	/* #services .main-section {
 		flex-direction: column-reverse;
+	} */
+
+	#tech {
+		/* background-color: blanchedalmond; */
 	}
 
-	#data {
-		background-color: blanchedalmond;
+	#contact{
+		display: flex;
+		justify-content: center;
+		background-color: #1B5B7E;
+		color: #E8F5FD;
 	}
 
-	#contact {
-		background-color: #161c20;
-		color: #d8c6c6;
+	.contact-inner {
+		display: flex;
+		/* align-items: center; */
+		flex-direction: column;
+		justify-content: space-around;
+		padding: 1em;
 	}
 
 	h1 {
 		font-size: 38px;
-		margin-top: 0.25em;
+		margin-bottom: 0.5em;
 	}
 
 	h2 {
-		margin: 0 0 1em;
+		/* margin: 0 0 1em; */
 		font-weight: normal;
 		font-size: 24px;
+	}
+
+	h3, h4 {
+		margin-top: 0;
 	}
 
 	p {
@@ -143,54 +239,39 @@ import ContactForm from './ContactForm.astro';
 	}
 
 	.button {
+		display: block;
+		width: fit-content;
 		margin-top: 2em;
 		padding: 1em 2.5em;
-		background-color: #161c20;
-		color: whitesmoke;
+		background-color: #1B5B7E;
+		color: #ffffff;
+		font-weight: bold;
 		text-decoration: none;
 		border-radius: 8px;
 		font-size: 16px;
-		border: 1px solid whitesmoke;
+		border: 1px solid #1B5B7E;
 		transition: background-color 300ms ease, color 300ms ease;
 	}
 
 	.button:hover {
-		background-color: whitesmoke;
-		color: #161c20;
-	}
-
-	.image-fade-wrapper {
-		position: relative;
-		display: inline-block;;
-	}
-
-	.image-fade-wrapper::after {
-		content: "";
-        position: absolute;
-        display: block;
-        top: -1px;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border-collapse: separate;
-		box-shadow: inset 0 0 34px 34px blanchedalmond;
+		background-color: #ffffff;
+		color: #1B5B7E;
 	}
 
 	@media screen and (min-width: 768px) {
-		/* #container {
-			display: flex;
-			flex-direction: column;
-		} */
+		section {
+			padding: 4em;
+		}
 
 		h1 {
 			font-size: 58px;
-			margin-top: 0.25em;
+			margin-bottom: 0.5em;
 		}
 
 		h2 {
-			margin: 0 0 1em;
 			font-weight: normal;
 			font-size: 38px;
+			margin-bottom: 0.3em;
 		}
 
 		p {
@@ -209,15 +290,15 @@ import ContactForm from './ContactForm.astro';
 			padding: 2em 0;
 		}
 
-		#analytics .main-section {
+		/* #services .main-section {
 			flex-direction: row;
-		}
+		} */
 
 		.inner-wrapper {
 			width: auto;
 		}
 
-		#contact .inner-wrapper {
+		.contact-inner {
 			width: 500px;
 		}
 	}
