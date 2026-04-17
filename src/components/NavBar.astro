@@ -1,0 +1,92 @@
+<nav>
+	<header>
+		<ul class="home">
+			<li><a href="#">Dave Morison - Digital Analyst</a></li>
+		</ul>
+		<ul class="nav-items">
+			<li><a href="#pitch">Why Me?</a></li>
+			<li><a href="#services">Services</a></li>
+			<li><a href="#tech">Tech Stack</a></li>
+		</ul>
+		<ul class="contact">
+			<li><a href="#contact">Contact</a></li>
+		</ul>
+	</header>
+</nav>
+
+<script type="module">
+	if (typeof window !== 'undefined') {
+		const header = document.querySelector('header');
+		const shrinkThreshold = 50;
+
+		const onScroll = () => {
+			if (!header) return;
+			window.scrollY > shrinkThreshold
+				? header.classList.add('header--small')
+				: header.classList.remove('header--small');
+		};
+
+		window.addEventListener('scroll', onScroll, { passive: true });
+		onScroll();
+	}
+</script>
+
+<style>
+	nav {
+		position: sticky;
+		top: 0;
+		z-index: 10;
+	}
+
+	header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 1em 4em;
+		background-color: #9BC0DA;
+		transition: padding 250ms ease, background-color 250ms ease, box-shadow 250ms ease;
+	}
+
+	header.header--small {
+		padding: 0.5em 4em;
+		box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+	}
+	header.header--small ul.nav-items {
+		background-color: transparent;
+		padding: 0.5em 2em;
+	}
+
+	ul {
+		padding: 0;
+		margin: 0;
+	}
+
+	ul.nav-items {
+		display: flex;
+		gap: 1.5em;
+		background-color: #E8F5FD;
+		padding: 1em 2em;
+		border-radius: 2em;
+		transition: padding 250ms ease, background-color 250ms ease;
+	}
+	ul.home {
+		max-width: 60px;
+		overflow: visible;
+	}
+	ul.home > li {
+		width: max-content;
+	}
+
+	li {
+		list-style: none;
+	}
+
+	a {
+		color: #012C3C;
+		text-decoration: none;
+		font-weight: bold;
+	}
+
+	a:hover {
+		text-decoration: underline;
+	}

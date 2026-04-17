@@ -1,10 +1,13 @@
 ---
 import { google_tag_manager } from '@/config/config.json';
+import { Font } from "astro:assets";
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
+		<Font cssVariable="--font-montserrat" />
+
 		<!-- Google tag (gtag.js) -->
 		<script type="text/partytown" async src={`https://www.googletagmanager.com/gtag/js?id=${google_tag_manager.gtm_id}`}></script>
 		<script type="text/partytown" define:vars={{ google_tag_manager }}>
