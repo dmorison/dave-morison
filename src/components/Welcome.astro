@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon/components';
 import webAnalyticsImage from '../assets/web-analytics-image.png';
 import NavBar from './NavBar.astro';
 import ContactForm from './ContactForm.astro';
@@ -19,7 +20,7 @@ import ContactForm from './ContactForm.astro';
 					<a class="button" href="/dave-morison/#contact">Book a Data Audit</a>
 				</div>
 				<div class="content-block">
-					<Image src={webAnalyticsImage} alt="Google Analytics dashboard" width={500} />
+					<Image src={webAnalyticsImage} alt="Google Analytics dashboard" layout="constrained" />
 				</div>
 			</section>
 			<section id="pitch">
@@ -92,12 +93,12 @@ import ContactForm from './ContactForm.astro';
 			<section id="tech">
 				<h3>Tech Stack</h3>
 				<ul>
-					<li><strong>Google Analytics 4</strong> - The latest version of Google's web analytics platform.</li>
-					<li><strong>Google Tag Manager</strong> - A tag management system that allows you to easily add and manage tracking scripts on your website.</li>
-					<li><strong>BigQuery</strong> - A fast, fully managed data warehouse for analytics.</li>
-					<li><strong>Looker Studio</strong> - A powerful data visualization tool for creating custom dashboards.</li>
-					<li><strong>Tableau</strong> - A leading data visualization software for creating interactive dashboards.</li>
-					<li><strong>Power BI</strong> - Microsoft's business analytics service for creating reports and dashboards.</li>
+					<li><Icon name="Analytics" size="40" title="Google Analytics 4 - The latest version of Google's web analytics platform" /><strong>Google Analytics 4</strong></li>
+					<li><Icon name="TagManager" size="40" title="Google Tag Manager - A tag management system that allows you to easily add and manage tracking scripts on your website" /><strong>Google Tag Manager</strong></li>
+					<li><Icon name="BigQuery" size="40" title="BigQuery - A fast, fully managed data warehouse for analytics" /><strong>BigQuery</strong></li>
+					<li><Icon name="Looker" size="40" title="Looker Studio - A powerful data visualization tool for creating custom dashboards" /><strong>Looker Studio</strong></li>
+					<li><Icon name="Tableau" size="40" title="Tableau - A leading data visualization software for creating interactive dashboards" /><strong>Tableau</strong></li>
+					<li><Icon name="PowerBI" size="40" title="Power BI - Microsoft's business analytics service for creating reports and dashboards" /><strong>Power BI</strong></li>
 				</ul>
 			</section>
 		</div>
@@ -106,13 +107,6 @@ import ContactForm from './ContactForm.astro';
 				<h3>Contact</h3>
 				<ContactForm />
 			</div>
-			
-			<!-- <div class="main-section">
-				<div class="inner-wrapper">
-					
-					
-				</div>
-			</div> -->
 		</section>
 	</main>
 </div>
@@ -143,7 +137,7 @@ import ContactForm from './ContactForm.astro';
 		font-size: 18px;
 	}
 
-	#pitch .section-inner {
+	/* #pitch .section-inner {
 		display: flex;
 		flex-direction: row;
 		gap: 4em;
@@ -153,31 +147,34 @@ import ContactForm from './ContactForm.astro';
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-	}
-
-	.inner-wrapper {
-		width: 100%;
-		margin-bottom: 1em;
-	}
-
-	#pitch {
-		/* background-color: #a5e1de; */
-	}
-
-	#services {
-		/* background-color: #9ac7a6; */
-	}
+	} */
 
 	#services .card {
 		background-color: #ffffff;
 	}
 
-	/* #services .main-section {
-		flex-direction: column-reverse;
-	} */
-
 	#tech {
-		/* background-color: blanchedalmond; */
+		text-align: center;
+	}
+
+	#tech ul {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		gap: 4em;
+		list-style-type: none;
+		padding-left: 0;
+	}
+
+	#tech ul li {
+		min-width: 180px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	
+	#tech ul li strong {
+		padding-top: 1em;
 	}
 
 	#contact{
@@ -223,7 +220,7 @@ import ContactForm from './ContactForm.astro';
 
 	.cards-wrapper {
 		display: flex;
-		flex-direction: row;
+		flex-direction: column;
 		gap: 2em;
 		margin: 1em 0;
 	}
@@ -238,13 +235,14 @@ import ContactForm from './ContactForm.astro';
 
 	.card-inner {
 		display: flex;
-		flex-direction: row;
+		flex-direction: column-reverse;
 	}
 
 	.card-inner > div {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
+		align-items: center;
 	}
 
 	.card-one {
@@ -305,21 +303,26 @@ import ContactForm from './ContactForm.astro';
 			font-size: 20px;
 		}
 
-		.main-section {
-			flex-direction: row;
-			padding: 2em 0;
-		}
-
-		/* #services .main-section {
-			flex-direction: row;
-		} */
-
-		.inner-wrapper {
-			width: auto;
-		}
-
 		.contact-inner {
 			width: 500px;
+		}
+
+		#tech ul {
+			flex-direction: row;
+		}
+
+		.cards-wrapper {
+			flex-direction: row;
+			gap: 2em;
+			margin: 1em 0;
+		}
+
+		.card-inner {
+			flex-direction: row;
+		}
+
+		.card-inner > div {
+			align-items: flex-start;
 		}
 	}
 </style>

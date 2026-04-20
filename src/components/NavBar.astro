@@ -40,6 +40,7 @@
 
 	header {
 		display: flex;
+		flex-wrap: wrap;
 		justify-content: space-between;
 		align-items: center;
 		padding: 1em 4em;
@@ -63,6 +64,7 @@
 
 	ul.nav-items {
 		display: flex;
+		order: 3;
 		gap: 1.5em;
 		background-color: #E8F5FD;
 		padding: 1em 2em;
@@ -90,3 +92,18 @@
 	a:hover {
 		text-decoration: underline;
 	}
+
+	@media screen and (min-width: 768px) {
+		ul.nav-items {
+			order: 2;
+		}
+		
+		ul.home {
+			order: 1;
+		}
+
+		ul.contact {
+			order: 3;
+		}
+	}
+</style>
