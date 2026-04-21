@@ -1,7 +1,9 @@
 ---
 import { Image } from 'astro:assets';
 import { Icon } from 'astro-icon/components';
-import webAnalyticsImage from '../assets/web-analytics-image.png';
+import analyticsHero from '../assets/analytics-hero.png';
+import cleanDataImage from '../assets/clean-data.png';
+import performanceImage from '../assets/performance.png';
 import NavBar from './NavBar.astro';
 import ContactForm from './ContactForm.astro';
 ---
@@ -16,11 +18,11 @@ import ContactForm from './ContactForm.astro';
 					<h2>
 						Dave Morison - Data and Web Analytics Consulting
 					</h2>
-					<p>Technical Digital Analytics for companies that need developer-grade data integrity.</p>
-					<a class="button" href="/dave-morison/#contact">Book a Data Audit</a>
+					<p>Technical Digital Analytics for businesses that need developer-grade data integrity.</p>
+					<a class="button" href="/dave-morison/#contact">Book an Analytics Audit</a>
 				</div>
 				<div class="content-block">
-					<Image src={webAnalyticsImage} alt="Google Analytics dashboard" layout="constrained" />
+					<Image src={analyticsHero} alt="Google Analytics dashboard" layout="constrained" width={600} />
 				</div>
 			</section>
 			<section id="pitch">
@@ -36,7 +38,7 @@ import ContactForm from './ContactForm.astro';
 								<h4>Clean Data</h4>
 								<p>I write custom scripts to get the data you need, ensuring accuracy and reliability.</p>
 							</div>
-							<Image src={webAnalyticsImage} alt="Google Analytics dashboard" width={300} />
+							<Image src={cleanDataImage} alt="Google Analytics dashboard" width={250} />
 						</div>
 					</div>
 					<div class="card">
@@ -45,7 +47,7 @@ import ContactForm from './ContactForm.astro';
 								<h4>Performance</h4>
 								<p>I implement lean tagging, so that tracking doesn't affect your website's performance.</p>
 							</div>
-							<Image src={webAnalyticsImage} alt="Google Analytics dashboard" width={300} />
+							<Image src={performanceImage} alt="Google Analytics dashboard" width={250} />
 						</div>
 					</div>
 				</div>
@@ -57,35 +59,35 @@ import ContactForm from './ContactForm.astro';
 						<h4>The Foundation</h4>
 						<p><strong>GA4 and GTM setup from scratch</strong></p>
 						<ul>
-							<li>Install GTM and configure GA4</li>
-							<li>Create one "source of truth" dashboard</li>
+							<li><Icon name="check" size="20" />Install GTM and configure GA4</li>
+							<li><Icon name="check" size="20" />Create one "source of truth" dashboard</li>
 						</ul>
 					</div>
 					<div class="card">
 						<h4>The Tracking Rescue</h4>
 						<p><strong>Technical audit - clean up and optimise</strong></p>
 						<ul>
-							<li>Audit current scripts</li>
-							<li>Find duplicate tags</li>
-							<li>Fix broken event triggers</li>
+							<li><Icon name="check" size="20" />Audit current scripts</li>
+							<li><Icon name="check" size="20" />Find duplicate tags</li>
+							<li><Icon name="check" size="20" />Fix broken event triggers</li>
 						</ul>
 					</div>
 					<div class="card">
 						<h4>The Custom Framework</h4>
 						<p><strong>Create a reusable GTM Data Layer for more complex tracking</strong></p>
 						<ul>
-							<li>Set up the Data Layer</li>
-							<li>Configure custom variables and triggers</li>
-							<li>Implement reusable tracking logic</li>
+							<li><Icon name="check" size="20" />Set up the Data Layer</li>
+							<li><Icon name="check" size="20" />Configure custom variables and triggers</li>
+							<li><Icon name="check" size="20" />Implement reusable tracking logic</li>
 						</ul>
 					</div>
 					<div class="card">
 						<h4>The Visualization</h4>
 						<p><strong>Custom dashboards</strong></p>
 						<ul>
-							<li>Looker Studio</li>
-							<li>Tableau</li>
-							<li>Power BI</li>
+							<li><Icon name="check" size="20" />Looker Studio</li>
+							<li><Icon name="check" size="20" />Tableau</li>
+							<li><Icon name="check" size="20" />Power BI</li>
 						</ul>
 					</div>
 				</div>
@@ -123,7 +125,7 @@ import ContactForm from './ContactForm.astro';
 	}
 
 	section {
-		padding: 2em;
+		padding: 1em;
 	}
 
 	.content-block {
@@ -133,21 +135,13 @@ import ContactForm from './ContactForm.astro';
 		text-align: center;
 	}
 
+	.content-block img {
+		margin-top: 2em;
+	}
+
 	#hero p {
 		font-size: 18px;
 	}
-
-	/* #pitch .section-inner {
-		display: flex;
-		flex-direction: row;
-		gap: 4em;
-	}
-
-	#pitch .section-inner > div {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-	} */
 
 	#services .card {
 		background-color: #ffffff;
@@ -186,7 +180,6 @@ import ContactForm from './ContactForm.astro';
 
 	.contact-inner {
 		display: flex;
-		/* align-items: center; */
 		flex-direction: column;
 		justify-content: space-around;
 		padding: 1em;
@@ -194,17 +187,23 @@ import ContactForm from './ContactForm.astro';
 
 	h1 {
 		font-size: 38px;
-		margin-bottom: 0.5em;
+		margin: 0.5em;
 	}
 
 	h2 {
-		/* margin: 0 0 1em; */
 		font-weight: normal;
 		font-size: 24px;
 	}
 
-	h3, h4 {
+	h3 {
+		font-size: 23px;
 		margin-top: 0;
+	}
+
+	h4 {
+		margin-top: 0;
+		margin-bottom: 0.5em;
+		text-decoration: underline;
 	}
 
 	p {
@@ -214,8 +213,15 @@ import ContactForm from './ContactForm.astro';
 		margin: 0;
 	}
 
-	ul {
-		padding-left: 1em;
+	.card ul {
+		padding-left: 0;
+		list-style-type: none;
+	}
+	.card ul li {
+		display: flex;
+		align-items: center;
+		gap: 0.5em;
+		margin-bottom: 0.5em;
 	}
 
 	.cards-wrapper {
