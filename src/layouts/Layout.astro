@@ -7,7 +7,6 @@ import { Font } from "astro:assets";
 <html lang="en">
 	<head>
 		<Font cssVariable="--font-montserrat" />
-
 		<!-- Google tag (gtag.js) -->
 		<script type="text/partytown" async src={`https://www.googletagmanager.com/gtag/js?id=${google_tag_manager.gtm_id}`}></script>
 		<script type="text/partytown" define:vars={{ google_tag_manager }}>
@@ -18,10 +17,14 @@ import { Font } from "astro:assets";
 		</script>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/png" href="/dave-morison/favicon-96x96.png" sizes="96x96" />
 		<link rel="icon" type="image/svg+xml" href="/dave-morison/favicon.svg" />
-		<link rel="icon" href="/dave-morison/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Dave Morison</title>
+		<link rel="shortcut icon" href="/dave-morison/favicon.ico" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/dave-morison/apple-touch-icon.png" />
+		<meta name="apple-mobile-web-app-title" content="Dave Morison - Digital Analyst" />
+		<link rel="manifest" href="/dave-morison/site.webmanifest" />
+		<meta name="Dave Morison - Digital Analyst" content="Dave Morison - Data and Web Analytics Consulting. Taking care of the technical implementation for businesses that need quality digital analytics data and reporting." />
+		<title>Dave Morison - Digital Analyst</title>
 	</head>
 	<body>
 		<slot />

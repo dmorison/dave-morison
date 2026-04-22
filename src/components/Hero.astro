@@ -1,0 +1,82 @@
+---
+import { Image } from 'astro:assets';
+import analyticsHero from '../assets/analytics-hero.png';
+---
+
+<div class="content-block">
+    <h1>Stop Guessing. Start Measuring</h1>
+    <h2>
+        Dave Morison - Data and Web Analytics Consulting
+    </h2>
+    <p>Technical Digital Analytics for businesses that need developer-grade data integrity.</p>
+    <a class="button" href="/dave-morison/#contact">Book an Analytics Audit</a>
+</div>
+<div class="content-block">
+    <Image src={analyticsHero} alt="Google Analytics dashboard" layout="constrained" width={600} />
+</div>
+
+<style>
+    .content-block {
+		display:flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+	}
+
+	.content-block img {
+		margin-top: 2em;
+        margin-bottom: 2em;
+	}
+
+    h1 {
+		font-size: 38px;
+		margin: 0.5em;
+	}
+
+	h2 {
+		font-weight: normal;
+		font-size: 24px;
+	}
+
+    p {
+		font-size: 18px;
+	}
+
+    .button {
+		display: block;
+		width: 200px;
+		margin-top: 2em;
+		padding: 1em;
+		background-color: #1B5B7E;
+		color: #ffffff;
+		font-weight: bold;
+		text-decoration: none;
+		border-radius: 2em;
+		font-size: 16px;
+		border: none;
+		transition: background-color 300ms ease, color 300ms ease;
+	}
+
+	.button:hover {
+		background-color: #ffffff;
+		color: #1B5B7E;
+	}
+
+    @media screen and (min-width: 768px) {
+        h1 {
+			font-size: 58px;
+			margin-bottom: 0.2em;
+		}
+
+		h2 {
+			font-weight: normal;
+			font-size: 38px;
+			margin-top: 0.2em;
+			margin-bottom: 0.3em;
+		}
+
+        p {
+			font-size: 20px;
+		}
+    }
+</style>
