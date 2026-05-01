@@ -1,0 +1,74 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ContactForm  from '@/components/ContactForm.astro';
+---
+
+<Layout>
+    <div id="container">
+        <main>
+            <div class="content">
+                <section>
+                    <h1>About Me</h1>
+                    <p>I'm a web analyst with a background in web development, specializing in Google Analytics and Google Tag Manager. I help businesses set up and optimize their analytics to make data-driven decisions.</p>
+                    <p>I have worked as a web developer for over 12 years, of which 11 years were spent working at MoneySavingExpert.com.</p>
+                    <p>This has provided me with a deep technical understanding of websites (JavaScript tags, URLs, parameters and redirects) and the ability to implement effective analytics solutions.</p>
+                    <p>During my time at MoneySavingExpert.com, on top of my development responsibilities, I also took on analytics-related tasks, helping to implement tracking solutions for both developer needs and business objectives.</p>
+                    <p>When I'm not working on analytics projects, you can find me mostly outdoors doing various activities from walking my dogs to hiking, cycling or swimming. Otherwise I'll be relaxing and enjoying a good book.</p>
+                    <a href="/dave-morison/#services">Find out more about the services I offer</a>
+                </section>
+            </div>
+            <section id="contact">
+			    <div class="contact-inner">
+                    <h3>Contact</h3>
+                    <ContactForm />
+                </div>
+		    </section>
+        </main>
+    </div>
+</Layout>
+
+<style>
+    #container {
+		font-family: var(--font-montserrat), Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+		color: #012C3C;
+	}
+
+	.content {
+		height: 100%;
+		background: linear-gradient(to bottom, #9BC0DA, #ffffff);
+	}
+
+	section {
+		padding: 1em;
+	}
+
+    p {
+		font-size: 16px;
+		line-height: 24px;
+		letter-spacing: -0.006em;
+	}
+
+    #contact{
+		display: flex;
+		justify-content: center;
+		background-color: #1B5B7E;
+		color: #E8F5FD;
+	}
+
+	.contact-inner {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		padding: 1em;
+	}
+
+    @media screen and (min-width: 768px) {
+        section {
+			padding: 4em;
+		}
+
+        .contact-inner {
+			width: 500px;
+		}
+    }
+</style>

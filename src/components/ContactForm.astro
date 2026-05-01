@@ -2,7 +2,7 @@
 import { web3forms_key } from '@/config/config.json';
 ---
 
-<form id="form" action="https://api.web3forms.com/submit" method="POST">
+<form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
     <input type="hidden" name="access_key" value={web3forms_key}>
     <label for="name">
         Full Name <span>*</span>
@@ -68,7 +68,7 @@ import { web3forms_key } from '@/config/config.json';
 </style>
 
 <script is:inline>
-    const form = document.getElementById('form');
+    const form = document.getElementById('contact-form');
     const submitBtn = form.querySelector('button[type="submit"]');
     const result = document.getElementById('result');
 
