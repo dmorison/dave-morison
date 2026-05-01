@@ -22,6 +22,7 @@ import ContactForm from './ContactForm.astro';
 					<div class="card card-one">
 						<p>I'll take care of the technical implementation, helping you make strategic business decisions based on accurate data.</p>
 						<p>With a background in web development and a passion for data, I bridge the gap between technical implementation and business insights.</p>
+						<a href="/dave-morison/about" class="about-me">More about me</a>
 					</div>
 					<div class="card">
 						<div class="card-inner">
@@ -48,31 +49,44 @@ import ContactForm from './ContactForm.astro';
 				<div class="cards-wrapper">
 					<div class="card">
 						<h4>The Foundation</h4>
-						<p><strong>GA4 and GTM setup from scratch</strong></p>
+						<p><strong>GA4 setup from scratch and ensure most relevant information is easily accessible</strong></p>
 						<ul>
-							<li><Icon name="check" size="20" />Install GTM and configure GA4</li>
-							<li><Icon name="check" size="20" />Create one "source of truth" dashboard</li>
+							<li><Icon name="check" size="20" />Install GA4 and configure data streams</li>
+							<li><Icon name="check" size="20" />Ensure events are being recorded correctly</li>
+							<li><Icon name="check" size="20" />Customize existing default reports and report collections</li>
+							<li><Icon name="check" size="20" />Implement data management: Cross-domain measurement, Unwanted referrals, Data filters</li>
 						</ul>
+						<p><u>Extras:</u> Install GTM and Configure GA4 Recommended events specific to your business objectives</p>
 					</div>
 					<div class="card">
 						<h4>The Tracking Rescue</h4>
 						<p><strong>Technical audit - clean up and optimise</strong></p>
 						<ul>
-							<li><Icon name="check" size="20" />Audit current scripts</li>
+							<li><Icon name="check" size="20" />Audit current configuration</li>
 							<li><Icon name="check" size="20" />Find duplicate tags</li>
 							<li><Icon name="check" size="20" />Fix broken event triggers</li>
 						</ul>
+						<p>Ensure your setup is inline with everything listed under "The Foundation"</p>
 					</div>
 					<div class="card">
 						<h4>The Custom Framework</h4>
-						<p><strong>Create a reusable GTM Data Layer for more complex tracking</strong></p>
+						<p><strong>Collect additional information that Google Analytics does not collect automatically</strong></p>
 						<ul>
-							<li><Icon name="check" size="20" />Set up the Data Layer</li>
+							<li><Icon name="check" size="20" />Set up custom tags in GTM specific to your business needs</li>
 							<li><Icon name="check" size="20" />Configure custom variables and triggers</li>
-							<li><Icon name="check" size="20" />Implement reusable tracking logic</li>
+							<li><Icon name="check" size="20" />Implement scripts for reusable tracking logic</li>
 						</ul>
 					</div>
 					<div class="card">
+						<h4>The Explorer</h4>
+						<p><strong>Custom reports using advance techniques that go beyond the standard reports to help you uncover deeper insights about your customers behaviour</strong></p>
+						<ul>
+							<li><Icon name="check" size="20" />Compare multiple metrics in a visually appropriate way</li>
+							<li><Icon name="check" size="20" />Unlock hidden insights with enhanced segmentation and audience analysis</li>
+							<li><Icon name="check" size="20" />Better understand user behavior through Path and Funnel explorations</li>
+						</ul>
+					</div>
+					<!-- <div class="card">
 						<h4>The Visualization</h4>
 						<p><strong>Custom dashboards</strong></p>
 						<ul>
@@ -80,7 +94,7 @@ import ContactForm from './ContactForm.astro';
 							<li><Icon name="check" size="20" />Tableau</li>
 							<li><Icon name="check" size="20" />Power BI</li>
 						</ul>
-					</div>
+					</div> -->
 				</div>
 			</section>
 			<section id="tech">
@@ -162,6 +176,9 @@ import ContactForm from './ContactForm.astro';
 		gap: 0.5em;
 		margin-bottom: 0.5em;
 	}
+	.card ul li > svg {
+		min-width: 20px;
+	}
 
 	.cards-wrapper {
 		display: flex;
@@ -203,6 +220,24 @@ import ContactForm from './ContactForm.astro';
 		margin-bottom: 1em;
 	}
 
+	.about-me {
+		display: inline-block;
+		margin-top: 1em;
+		padding: 0.75em 1.5em;
+		background-color: #1B5B7E;
+		color: #ffffff;
+		font-weight: bold;
+		text-decoration: none;
+		border-radius: 2em;
+		font-size: 16px;
+		border: none;
+		transition: background-color 300ms ease, color 300ms ease;
+	}
+	.about-me:hover {
+		background-color: #ffffff;
+		color: #1B5B7E;
+	}
+
 	@media screen and (min-width: 768px) {
 		section {
 			padding: 4em;
@@ -211,13 +246,6 @@ import ContactForm from './ContactForm.astro';
 		#pitch, #services {
 			max-width: 1400px;
 			margin: 0 auto;
-		}
-
-		p {
-			font-size: 16px;
-			line-height: 24px;
-			letter-spacing: -0.006em;
-			margin: 0;
 		}
 
 		.contact-inner {
