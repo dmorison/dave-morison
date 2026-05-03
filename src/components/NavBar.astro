@@ -1,15 +1,24 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
 <nav>
 	<header>
 		<ul class="home">
-			<li><a href="#">Dave Morison - Web Analyst</a></li>
+			<li><a href="/dave-morison">Dave Morison - Web Analyst</a></li>
 		</ul>
 		<ul class="nav-items">
-			<li><a href="#pitch">Why Me?</a></li>
-			<li><a href="#services">Services</a></li>
-			<li><a href="#tech">Tech Stack</a></li>
+			<li><a href="/dave-morison#pitch">Why Me?</a></li>
+			<li><a href="/dave-morison#services">Services</a></li>
+			<li><a href="/dave-morison#tech">Tech Stack</a></li>
 		</ul>
 		<ul class="contact">
 			<li><a href="#contact">Contact</a></li>
+			<li>
+				<a href="https://www.linkedin.com/in/david-morison/" target="_blank" rel="noopener noreferrer">
+					<Icon name="LinkedIn" size="30" />
+				</a>
+			</li>
 		</ul>
 	</header>
 </nav>
@@ -75,13 +84,25 @@
 		border-radius: 2em;
 		transition: padding 250ms ease, background-color 250ms ease;
 	}
+
 	ul.home {
-		max-width: 60px;
+		max-width: 110px;
 		overflow: visible;
 	}
 	ul.home > li {
 		width: max-content;
 		font-weight: bold;
+	}
+	ul.home > li::after {
+		content: "|";
+		display: inline-block;
+		margin-left: 0.5em;
+	}
+
+	ul.contact {
+		display: flex;
+		gap: 1em;
+		align-items: center;
 	}
 
 	li {
@@ -115,6 +136,9 @@
 		
 		ul.home {
 			order: 1;
+		}
+		ul.home > li::after {
+			display: none;
 		}
 
 		ul.contact {
