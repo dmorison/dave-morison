@@ -1,20 +1,27 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ContactForm  from '@/components/ContactForm.astro';
+import NavBar from '@/components/NavBar.astro';
+import { Image } from 'astro:assets';
+import aboutImage from '../assets/about-image.jpg';
 ---
 
 <Layout>
     <div id="container">
         <main>
+            <NavBar />
             <div class="content">
                 <section>
-                    <h1>About Me</h1>
-                    <p>I'm a web analyst with a background in web development, specializing in Google Analytics and Google Tag Manager. I help businesses set up and optimize their analytics to make data-driven decisions.</p>
-                    <p>I have worked as a web developer for over 12 years, of which 11 years were spent working at MoneySavingExpert.com.</p>
-                    <p>This has provided me with a deep technical understanding of websites (JavaScript tags, URLs, parameters and redirects) and the ability to implement effective analytics solutions.</p>
-                    <p>During my time at MoneySavingExpert.com, on top of my development responsibilities, I also took on analytics-related tasks, helping to implement tracking solutions for both developer needs and business objectives.</p>
-                    <p>When I'm not working on analytics projects, you can find me mostly outdoors doing various activities from walking my dogs to hiking, cycling or swimming. Otherwise I'll be relaxing and enjoying a good book.</p>
-                    <a href="/dave-morison/#services">Find out more about the services I offer</a>
+                    <Image src={aboutImage} alt="About Dave Morison" class="about-image" width="300" />
+                    <div>
+                        <h1>About Me</h1>
+                        <p>I'm a web analyst with a background in web development, specializing in Google Analytics and Google Tag Manager. I help businesses set up and optimize their analytics to make better decisions and achieve their objectives.</p>
+                        <p>I have worked as a web developer for over 12 years, of which 11 years were spent working at MoneySavingExpert.com.</p>
+                        <p>This has provided me with a deep technical understanding of websites (JavaScript tags, URLs, parameters and redirects) and the ability to implement effective analytics solutions.</p>
+                        <p>During my time at MoneySavingExpert.com, on top of my development responsibilities, I also took on analytics-related tasks. I helped implement tracking solutions for both developer needs and business stakeholders.</p>
+                        <p>When I'm not working on analytics projects, you can find me mostly outdoors doing various activities from walking my dogs to hiking, cycling or swimming. Otherwise I'll be relaxing and enjoying a good book.</p>
+                        <a href="/dave-morison/#services" class="services-btn">Find out more about the services I offer</a>
+                    </div>
                 </section>
             </div>
             <section id="contact">
@@ -39,6 +46,11 @@ import ContactForm  from '@/components/ContactForm.astro';
 	}
 
 	section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1em;
+        flex-wrap: wrap;
 		padding: 1em;
 	}
 
@@ -62,13 +74,44 @@ import ContactForm  from '@/components/ContactForm.astro';
 		padding: 1em;
 	}
 
+    .about-image {
+        border: 2px solid #012C3C;
+        border-radius: 10em;
+        margin-top: 1em;
+    }
+    
+    .services-btn {
+		display: inline-block;
+		margin-top: 1em;
+        margin-bottom: 1em;
+		padding: 0.75em 1.5em;
+		background-color: #1B5B7E;
+		color: #ffffff;
+		font-weight: bold;
+		text-decoration: none;
+		border-radius: 2em;
+		font-size: 15px;
+		border: none;
+		transition: background-color 300ms ease, color 300ms ease;
+	}
+	.services-btn:hover {
+		background-color: #ffffff;
+		color: #1B5B7E;
+	}
+
     @media screen and (min-width: 768px) {
         section {
 			padding: 4em;
+            flex-wrap: nowrap;
+            gap: 2em;
 		}
 
         .contact-inner {
 			width: 500px;
 		}
+
+        .services-btn {
+            font-size: 16px;
+        }
     }
 </style>
