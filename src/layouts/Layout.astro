@@ -2,27 +2,21 @@
 import { google_tag_manager } from '@/config/config.json';
 import { Font } from "astro:assets";
 import { Icon } from 'astro-icon/components';
+
+const { title } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<!-- Google Tag Manager -->
-		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		<script is:inline>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 		})(window,document,'script','dataLayer','GTM-NFN7F6MP');</script>
 		<!-- End Google Tag Manager -->
 		<Font cssVariable="--font-montserrat" />
-		<!-- Google tag (gtag.js) -->
-		<script type="text/partytown" async src={`https://www.googletagmanager.com/gtag/js?id=${google_tag_manager.gtm_id}`}></script>
-		<script type="text/partytown" define:vars={{ google_tag_manager }}>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
-			gtag('config', google_tag_manager.gtm_id);
-		</script>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/png" href="/dave-morison/favicon-96x96.png" sizes="96x96" />
@@ -32,7 +26,7 @@ import { Icon } from 'astro-icon/components';
 		<meta name="apple-mobile-web-app-title" content="Dave Morison - Digital Analyst" />
 		<link rel="manifest" href="/dave-morison/site.webmanifest" />
 		<meta name="Dave Morison - Digital Analyst" content="Dave Morison - Data and Web Analytics Consulting. Taking care of the technical implementation for businesses that need quality digital analytics data and reporting." />
-		<title>Dave Morison - Digital Analyst</title>
+		<title>Dave Morison - {title}</title>
 	</head>
 	<body>
 		<!-- Google Tag Manager (noscript) -->
@@ -41,7 +35,7 @@ import { Icon } from 'astro-icon/components';
 		<!-- End Google Tag Manager (noscript) -->
 		<slot />
 		<div class="footer">
-			<a href="https://www.linkedin.com/in/david-morison/" target="_blank" rel="noopener noreferrer">
+			<a id="footer-linkedin" href="https://www.linkedin.com/in/david-morison/" target="_blank" rel="noopener noreferrer">
 				<Icon name="LinkedInText" width="60" height="20" title="LinkedIn - Connect with me on LinkedIn" />
 			</a>	
 		</div>
