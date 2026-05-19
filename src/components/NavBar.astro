@@ -1,5 +1,7 @@
 ---
 import { Icon } from 'astro-icon/components';
+
+const { page } = Astro.props;
 ---
 
 <nav>
@@ -7,10 +9,10 @@ import { Icon } from 'astro-icon/components';
 		<ul class="home">
 			<li><a id="nav-home" href="/dave-morison">Dave Morison - Web Analyst</a></li>
 		</ul>
-		<ul class="nav-items">
-			<li><a id="nav-pitch" href="/dave-morison#pitch">Why Me?</a></li>
-			<li><a id="nav-services" href="/dave-morison#services">Services</a></li>
-			<li><a id="nav-tech" href="/dave-morison#tech">Tech Stack</a></li>
+		<ul class={`nav-items ${page === 'aboutPage' ? 'hide' : ''}`}>
+			<li><a id="nav-pitch" href="#pitch">Why Me?</a></li>
+			<li><a id="nav-services" href="#services">Services</a></li>
+			<li><a id="nav-tech" href="#tech">Tech Stack</a></li>
 		</ul>
 		<ul class="contact">
 			<li><a id="nav-contact-btn" href="#contact">Contact</a></li>
@@ -83,6 +85,9 @@ import { Icon } from 'astro-icon/components';
 		padding: 1em;
 		border-radius: 2em;
 		transition: padding 250ms ease, background-color 250ms ease;
+	}
+	ul.nav-items.hide {
+		display: none;
 	}
 
 	ul.home {
