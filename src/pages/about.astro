@@ -9,7 +9,7 @@ import aboutImage from '../assets/about-image.jpg';
 <Layout title="About Me">
     <div id="container">
         <main>
-            <NavBar />
+            <NavBar page="aboutPage" />
             <div class="content">
                 <section>
                     <Image src={aboutImage} alt="About Dave Morison" class="about-image" width="300" />
@@ -20,7 +20,7 @@ import aboutImage from '../assets/about-image.jpg';
                         <p>This has provided me with a deep technical understanding of websites (JavaScript tags, URLs, parameters and redirects) and the ability to implement effective analytics solutions.</p>
                         <p>During my time at MoneySavingExpert.com, on top of my development responsibilities, I also took on analytics-related tasks. I helped implement tracking solutions for both developer needs and business stakeholders.</p>
                         <p>When I'm not working on analytics projects, you can find me mostly outdoors doing various activities from walking my dogs to hiking, cycling or swimming. Otherwise I'll be relaxing and enjoying a good book.</p>
-                        <a href="/dave-morison/#services" class="services-btn">Find out more about the services I offer</a>
+                        <a href="/dave-morison/#services" id="about-page-services-link-btn" class="services-btn">Find out more about the services I offer</a>
                     </div>
                 </section>
             </div>
