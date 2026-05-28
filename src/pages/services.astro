@@ -1,0 +1,148 @@
+---
+import { Icon } from 'astro-icon/components';
+import Layout from '../layouts/Layout.astro';
+import ContactForm  from '@/components/ContactForm.astro';
+import NavBar from '@/components/NavBar.astro';
+---
+
+<Layout title="Services">
+    <div id="container">
+        <main>
+            <NavBar page="aboutPage" />
+            <div class="content">
+                <section id="audit">
+                    <h2>Analytics Audit</h2>
+                    <p><strong>Focuses on a systematic review of your existing setup.</strong></p>
+                    <ul>
+                        <li><Icon name="check" size="20" />Account configuration</li>
+                        <li><Icon name="check" size="20" />Data quality and event tracking</li>
+                        <li><Icon name="check" size="20" />Reporting and insights</li>
+                        <li><Icon name="check" size="20" />Compliance and privacy</li>
+                    </ul>
+                </section>
+                <section id="foundation">
+                    <h2>The Foundation</h2>
+                    <div>
+                        <p><strong>Focuses on base implementation and measurement planning.</strong></p>
+						<ul>
+							<li><Icon name="check" size="20" />Google Tag Manager (GTM) and Google Analytics (GA4) setup and configuration</li>
+							<li><Icon name="check" size="20" />Implement data management: Cross-domain measurement, Unwanted referrals, Data filters</li>
+                            <li><Icon name="check" size="20" />Configure GA4 Recommended events specific to your business objectives</li>
+							<li><Icon name="check" size="20" />Customize existing default reports and report collections ensuring the most relevant information is easily accessible</li>
+							<li><Icon name="check" size="20" />Identify core metrics and create a measurement plan</li>
+						</ul>
+                    </div>
+                </section>
+                <section id="explorer">
+                    <h2>The Explorer</h2>
+                    <div>
+                        <p><strong>Collect additional information that Google Analytics does not collect automatically</strong></p>
+                        <p>Custom reports using advance techniques that go beyond the standard reports to help you uncover deeper insights about your customers behaviour</p>
+						<ul>
+							<li><Icon name="check" size="20" />Set up custom events in GTM specific to your business needs</li>
+							<li><Icon name="check" size="20" />Configure tags, variables and triggers</li>
+							<li><Icon name="check" size="20" />Unlock hidden insights with enhanced segmentation and audience analysis</li>
+                            <li><Icon name="check" size="20" />Better understand user behavior through Path and Funnel explorations</li>
+							<li><Icon name="check" size="20" />Compare multiple dimensions in a visually appropriate way</li>
+                            <li><Icon name="check" size="20" />Own your data and unlock advanced analytics capabilities with a BigQuery export</li>
+						</ul>
+                    </div>
+                </section>
+                <section id="support">
+                    <h2>Ongoing Support</h2>
+                    <p><strong>Focuses on providing monthly support and maintenance.</strong></p>
+                    <ul>
+                        <li><Icon name="check" size="20" />Once monthly review of your analytics setup to ensure it remains accurate and effective</li>
+                        <li><Icon name="check" size="20" />Basic data health checks to identify and resolve any issues</li>
+                        <li><Icon name="check" size="20" />Ongoing technical support</li>
+                    </ul>
+                </section>
+            </div>
+            <section id="contact">
+			    <div class="contact-inner">
+                    <h3>Contact</h3>
+                    <ContactForm />
+                </div>
+		    </section>
+        </main>
+    </div>
+</Layout>
+
+<style>
+    #container {
+		font-family: var(--font-montserrat), Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+		color: #012C3C;
+	}
+
+	.content {
+		height: 100%;
+		background: linear-gradient(to bottom, #9BC0DA, #ffffff);
+	}
+
+    section {
+		padding: 6em 1em 1em;
+	}
+    section:last-child {
+        padding-bottom: 2em;
+    }
+    section#contact {
+        padding-top: 4em;
+        padding-bottom: 1em;
+    }
+
+    h2 {
+        margin-top: 0;
+    }
+
+    p {
+		font-size: 16px;
+		line-height: 24px;
+		letter-spacing: -0.006em;
+	}
+
+    ul {
+		padding-left: 0;
+		list-style-type: none;
+	}
+	ul li {
+		display: flex;
+		align-items: center;
+		gap: 0.5em;
+		margin-bottom: 0.5em;
+	}
+	ul li > svg {
+		min-width: 20px;
+	}
+
+    #contact{
+		display: flex;
+		justify-content: center;
+		background-color: #1B5B7E;
+		color: #E8F5FD;
+	}
+
+	.contact-inner {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		padding: 1em;
+	}
+
+    @media screen and (min-width: 768px) {
+        section {
+			padding: 6em 4em 4em;
+            flex-wrap: nowrap;
+            gap: 2em;
+		}
+        section:last-child {
+            padding-bottom: 4em;
+        }
+        section#contact {
+            padding-bottom: 1em;
+        }
+
+        .contact-inner {
+			width: 500px;
+		}
+    }
+</style>

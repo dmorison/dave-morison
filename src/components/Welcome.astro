@@ -47,43 +47,33 @@ import ContactForm from './ContactForm.astro';
 			<section id="services">
 				<h3>Services</h3>
 				<div class="cards-wrapper">
-					<div class="card">
-						<h4>The Foundation</h4>
-						<p><strong>Google Analytics (GA4) setup and configuration</strong></p>
-						<ul>
-							<li><Icon name="check" size="20" />Install GA4 and configure data streams</li>
-							<li><Icon name="check" size="20" />Implement data management: Cross-domain measurement, Unwanted referrals, Data filters</li>
-							<li><Icon name="check" size="20" />Customize existing default reports and report collections</li>
-							<li><Icon name="check" size="20" />Ensure events are being recorded correctly and the most relevant information is easily accessible</li>
-						</ul>
+					<div class="card service-card">
+						<div>
+							<h4>The Audit</h4>
+							<p>Focuses on a systematic review of your existing setup.</p>
+						</div>
+						<p><a href="/dave-morison/services#audit" id="services-audit-learn-more" class="service-btn">Learn More<Icon name="arrowRight" size="20" /></a></p>
 					</div>
-					<div class="card">
-						<h4>The Tracker</h4>
-						<p><strong>Google Tag Manager (GTM) setup and configuration</strong></p>
-						<ul>
-							<li><Icon name="check" size="20" />Install GTM and configure containers</li>
-							<li><Icon name="check" size="20" />Configure GA4 Recommended events specific to your business objectives</li>
-							<li><Icon name="check" size="20" />Including everything covered in the Foundation</li>
-						</ul>
+					<div class="card service-card">
+						<div>
+							<h4>The Foundation</h4>
+							<p>Focuses on base implementation and measurement planning.</p>
+						</div>
+						<p><a href="/dave-morison/services#foundation" id="services-foundation-learn-more" class="service-btn">Learn More<Icon name="arrowRight" size="20" /></a></p>
 					</div>
-					<div class="card">
-						<h4>The Custom Framework</h4>
-						<p><strong>Collect additional information that Google Analytics does not collect automatically</strong></p>
-						<ul>
-							<li><Icon name="check" size="20" />Set up custom events in GTM specific to your business needs</li>
-							<li><Icon name="check" size="20" />Configure tags, variables and triggers</li>
-							<li><Icon name="check" size="20" />Manage the flow of information from your website to your chosen destinations</li>
-						</ul>
-						<p><u>Extra:</u> Own your data with a BigQuery export for long-term storage and further advanced analytics capabilities.</p>
+					<div class="card service-card">
+						<div>
+							<h4>The Explorer</h4>
+							<p>Collect additional information that Google Analytics does not collect automatically and create custom reports using advanced techniques.</p>
+						</div>
+						<p><a href="/dave-morison/services#explorer" id="services-explorer-learn-more" class="service-btn">Learn More<Icon name="arrowRight" size="20" /></a></p>
 					</div>
-					<div class="card">
-						<h4>The Explorer</h4>
-						<p><strong>Custom reports using advance techniques that go beyond the standard reports to help you uncover deeper insights about your customers behaviour</strong></p>
-						<ul>
-							<li><Icon name="check" size="20" />Compare multiple dimensions in a visually appropriate way</li>
-							<li><Icon name="check" size="20" />Unlock hidden insights with enhanced segmentation and audience analysis</li>
-							<li><Icon name="check" size="20" />Better understand user behavior through Path and Funnel explorations</li>
-						</ul>
+					<div class="card service-card">
+						<div>
+							<h4>Ongoing Support</h4>
+							<p>Focuses on providing monthly technical support and maintenance.</p>
+						</div>
+						<p><a href="/dave-morison/services#support" id="services-support-learn-more" class="service-btn">Learn More<Icon name="arrowRight" size="20" /></a></p>
 					</div>
 					<!-- <div class="card">
 						<h4>The Visualization</h4>
@@ -122,7 +112,10 @@ import ContactForm from './ContactForm.astro';
 	}
 
 	section {
-		padding: 1em;
+		padding: 6em 1em 1em;
+	}
+	section#hero {
+		padding-top: 1em;
 	}
 
 	#services .card {
@@ -165,20 +158,6 @@ import ContactForm from './ContactForm.astro';
 		margin: 0;
 	}
 
-	.card ul {
-		padding-left: 0;
-		list-style-type: none;
-	}
-	.card ul li {
-		display: flex;
-		align-items: center;
-		gap: 0.5em;
-		margin-bottom: 0.5em;
-	}
-	.card ul li > svg {
-		min-width: 20px;
-	}
-
 	.cards-wrapper {
 		display: flex;
 		flex-direction: column;
@@ -219,6 +198,22 @@ import ContactForm from './ContactForm.astro';
 		margin-bottom: 1em;
 	}
 
+	.service-card {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	.service-card svg {
+		position: relative;
+		top: 5px;
+		left: 4px;
+		transition: transform 300ms ease;
+	}
+	.service-card:hover svg {
+		transform: translateX(5px);
+	}
+
 	.about-me {
 		display: inline-block;
 		margin-top: 1em;
@@ -239,7 +234,10 @@ import ContactForm from './ContactForm.astro';
 
 	@media screen and (min-width: 768px) {
 		section {
-			padding: 4em;
+			padding: 6em 4em 2em;
+		}
+		section#hero {
+			padding-top: 4em;
 		}
 
 		#pitch, #services {

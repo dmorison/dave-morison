@@ -9,7 +9,7 @@ const { page } = Astro.props;
 		<ul class="home">
 			<li><a id="nav-home" href="/dave-morison">Dave Morison - Web Analyst</a></li>
 		</ul>
-		<ul class={`nav-items ${page === 'aboutPage' ? 'hide' : ''}`}>
+		<ul class={`nav-items ${page !== 'homePage' ? 'hide' : ''}`}>
 			<li><a id="nav-pitch" href="#pitch">Why Me?</a></li>
 			<li><a id="nav-services" href="#services">Services</a></li>
 			<li><a id="nav-tech" href="#tech">Tech Stack</a></li>
