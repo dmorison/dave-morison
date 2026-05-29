@@ -1,5 +1,11 @@
 ---
+import { Image } from 'astro:assets';
 import { Icon } from 'astro-icon/components';
+import servicesImage from '../assets/services-image.png';
+import auditImage from '../assets/audit-img.png';
+import foundationImage from '../assets/foundation-img.png';
+import explorerImage from '../assets/explorer-img.png';
+import supportImage from '../assets/support-img.png';
 import Layout from '../layouts/Layout.astro';
 import ContactForm  from '@/components/ContactForm.astro';
 import NavBar from '@/components/NavBar.astro';
@@ -10,20 +16,40 @@ import NavBar from '@/components/NavBar.astro';
         <main>
             <NavBar page="aboutPage" />
             <div class="content">
+                <section id="intro">
+                    <div>
+                        <Image src={servicesImage} alt="Services" width={360} />
+                    </div>
+                    <div>
+                        <h1>Services</h1>
+                        <p>Whether you need a one-time analytics audit, help getting started with your initial setup, or you're looking to take your analytics to the next level with more complex implementations. I'm here to help you at any stage of your journey. </p>
+                        <p>I offer a range of services broken down into three categories and ongoing support. Explore the options below to find the perfect plan for your business.</p>
+                        <p>All pricing is in GBP (British Pound Sterling) and the range provides an estimate that is scoped according to the size of the project.</p>
+                    </div>
+                </section>
                 <section id="audit">
-                    <h2>Analytics Audit</h2>
-                    <p><strong>Focuses on a systematic review of your existing setup.</strong></p>
-                    <ul>
-                        <li><Icon name="check" size="20" />Account configuration</li>
-                        <li><Icon name="check" size="20" />Data quality and event tracking</li>
-                        <li><Icon name="check" size="20" />Reporting and insights</li>
-                        <li><Icon name="check" size="20" />Compliance and privacy</li>
-                    </ul>
+                    <div>
+                        <Image src={auditImage} alt="Audit service" width={200} />
+                    </div>
+                    <div>
+                        <h2>Analytics Audit</h2>
+                        <p><strong>Focuses on a systematic review of your existing setup.</strong></p>
+                        <ul>
+                            <li><Icon name="check" size="20" />Account configuration</li>
+                            <li><Icon name="check" size="20" />Data quality and event tracking</li>
+                            <li><Icon name="check" size="20" />Reporting and insights</li>
+                            <li><Icon name="check" size="20" />Compliance and privacy</li>
+                        </ul>
+                        <p>[ £250 - £500 ]</p>
+                    </div>
                 </section>
                 <section id="foundation">
-                    <h2>The Foundation</h2>
                     <div>
-                        <p><strong>Focuses on base implementation and measurement planning.</strong></p>
+                        <Image src={foundationImage} alt="Foundation service" width={200} />
+                    </div>
+                    <div>
+                        <h2>The Foundation</h2>
+                        <p><strong>Covers base implementation and measurement planning.</strong></p>
 						<ul>
 							<li><Icon name="check" size="20" />Google Tag Manager (GTM) and Google Analytics (GA4) setup and configuration</li>
 							<li><Icon name="check" size="20" />Implement data management: Cross-domain measurement, Unwanted referrals, Data filters</li>
@@ -31,13 +57,17 @@ import NavBar from '@/components/NavBar.astro';
 							<li><Icon name="check" size="20" />Customize existing default reports and report collections ensuring the most relevant information is easily accessible</li>
 							<li><Icon name="check" size="20" />Identify core metrics and create a measurement plan</li>
 						</ul>
+                        <p>[ £1,000 - £1,500 ]</p>
                     </div>
                 </section>
                 <section id="explorer">
-                    <h2>The Explorer</h2>
                     <div>
-                        <p><strong>Collect additional information that Google Analytics does not collect automatically</strong></p>
-                        <p>Custom reports using advance techniques that go beyond the standard reports to help you uncover deeper insights about your customers behaviour</p>
+                        <Image src={explorerImage} alt="Explorer service" width={200} />
+                    </div>
+                    <div>
+                        <h2>The Explorer</h2>
+                        <p><strong>Collect additional information that Google Analytics does not collect automatically.</strong></p>
+                        <p>Custom reports using advance techniques that go beyond the standard reports to help you uncover deeper insights about your customers behaviour.</p>
 						<ul>
 							<li><Icon name="check" size="20" />Set up custom events in GTM specific to your business needs</li>
 							<li><Icon name="check" size="20" />Configure tags, variables and triggers</li>
@@ -46,16 +76,23 @@ import NavBar from '@/components/NavBar.astro';
 							<li><Icon name="check" size="20" />Compare multiple dimensions in a visually appropriate way</li>
                             <li><Icon name="check" size="20" />Own your data and unlock advanced analytics capabilities with a BigQuery export</li>
 						</ul>
+                        <p>[ £1,500 - £3,000 ]</p>
                     </div>
                 </section>
                 <section id="support">
-                    <h2>Ongoing Support</h2>
-                    <p><strong>Focuses on providing monthly support and maintenance.</strong></p>
-                    <ul>
-                        <li><Icon name="check" size="20" />Once monthly review of your analytics setup to ensure it remains accurate and effective</li>
-                        <li><Icon name="check" size="20" />Basic data health checks to identify and resolve any issues</li>
-                        <li><Icon name="check" size="20" />Ongoing technical support</li>
-                    </ul>
+                    <div>
+                        <Image src={supportImage} alt="Ongoing support" width={200} />
+                    </div>
+                    <div>
+                        <h2>Ongoing Support</h2>
+                        <p><strong>Focuses on providing monthly support and maintenance.</strong></p>
+                        <ul>
+                            <li><Icon name="check" size="20" />Once monthly review of your analytics setup to ensure it remains accurate and effective</li>
+                            <li><Icon name="check" size="20" />Basic data health checks to identify and resolve any issues</li>
+                            <li><Icon name="check" size="20" />Ongoing technical support</li>
+                        </ul>
+                        <p>[ £250 - £1,500 per month ]</p>
+                    </div>
                 </section>
             </div>
             <section id="contact">
@@ -80,14 +117,27 @@ import NavBar from '@/components/NavBar.astro';
 	}
 
     section {
-		padding: 6em 1em 1em;
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+		padding: 2em 1em 1em;
 	}
     section:last-child {
         padding-bottom: 2em;
     }
+
+    section > div:first-child {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
     section#contact {
         padding-top: 4em;
         padding-bottom: 1em;
+    }
+    section#contact > div:first-child {
+        align-items: flex-start;
     }
 
     h2 {
@@ -130,15 +180,24 @@ import NavBar from '@/components/NavBar.astro';
 
     @media screen and (min-width: 768px) {
         section {
-			padding: 6em 4em 4em;
+			padding: 4em;
             flex-wrap: nowrap;
             gap: 2em;
+            flex-direction: row;
+            justify-content: flex-start;
 		}
         section:last-child {
             padding-bottom: 4em;
         }
         section#contact {
             padding-bottom: 1em;
+        }
+
+        section#intro,
+        section#foundation,
+        section#support {
+            flex-direction: row-reverse;
+            justify-content: flex-end;
         }
 
         .contact-inner {

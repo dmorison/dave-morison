@@ -3,6 +3,10 @@ import { Image } from 'astro:assets';
 import { Icon } from 'astro-icon/components';
 import dataImage from '../assets/data-image.png';
 import performanceImage from '../assets/performance-image.png';
+import auditImage from '../assets/audit-img.png';
+import foundationImage from '../assets/foundation-img.png';
+import explorerImage from '../assets/explorer-img.png';
+import supportImage from '../assets/support-img.png';
 import NavBar from './NavBar.astro';
 import Hero from './Hero.astro';
 import Tech from './Tech.astro';
@@ -20,8 +24,7 @@ import ContactForm from './ContactForm.astro';
 				<h3>Technical Edge</h3>
 				<div class="cards-wrapper">
 					<div class="card card-one">
-						<p>I'll take care of the technical implementation, helping you make strategic business decisions based on accurate data.</p>
-						<p>With a background in web development and a passion for data, I bridge the gap between technical implementation and business insights.</p>
+						<p>With a background in web development and a passion for data, I help bridge the gap between technical implementation and business insights enabling you to make informed decisions based on accurate data.</p>
 						<a href="/dave-morison/about" id="about-me-link-btn" class="about-me">More about me</a>
 					</div>
 					<div class="card">
@@ -30,7 +33,7 @@ import ContactForm from './ContactForm.astro';
 								<h4>Clean Data</h4>
 								<p>I write custom scripts to get the data you need, ensuring accuracy and reliability.</p>
 							</div>
-							<Image src={dataImage} alt="Google Analytics dashboard" width={250} />
+						<Image src={dataImage} alt="Google Analytics dashboard" width={220} />
 						</div>
 					</div>
 					<div class="card">
@@ -39,7 +42,7 @@ import ContactForm from './ContactForm.astro';
 								<h4>Performance</h4>
 								<p>I implement lean tagging, so that tracking doesn't affect your website's performance.</p>
 							</div>
-							<Image src={performanceImage} alt="Google Analytics dashboard" width={250} />
+						<Image src={performanceImage} alt="Google Analytics dashboard" width={220} />
 						</div>
 					</div>
 				</div>
@@ -49,6 +52,7 @@ import ContactForm from './ContactForm.astro';
 				<div class="cards-wrapper">
 					<div class="card service-card">
 						<div>
+							<Image src={auditImage} alt="Audit service" height={110} />
 							<h4>The Audit</h4>
 							<p>Focuses on a systematic review of your existing setup.</p>
 						</div>
@@ -56,13 +60,15 @@ import ContactForm from './ContactForm.astro';
 					</div>
 					<div class="card service-card">
 						<div>
+							<Image src={foundationImage} alt="Foundation service" height={110} />
 							<h4>The Foundation</h4>
-							<p>Focuses on base implementation and measurement planning.</p>
+							<p>Covers base implementation of Google Tag Manager (GTM) and Google Analytics (GA4). Includes a measurement plan.</p>
 						</div>
 						<p><a href="/dave-morison/services#foundation" id="services-foundation-learn-more" class="service-btn">Learn More<Icon name="arrowRight" size="20" /></a></p>
 					</div>
 					<div class="card service-card">
 						<div>
+							<Image src={explorerImage} alt="Explorer service" height={110} />
 							<h4>The Explorer</h4>
 							<p>Collect additional information that Google Analytics does not collect automatically and create custom reports using advanced techniques.</p>
 						</div>
@@ -70,8 +76,9 @@ import ContactForm from './ContactForm.astro';
 					</div>
 					<div class="card service-card">
 						<div>
+							<Image src={supportImage} alt="Ongoing support" height={110} />
 							<h4>Ongoing Support</h4>
-							<p>Focuses on providing monthly technical support and maintenance.</p>
+							<p>Provide monthly technical support and maintenance.</p>
 						</div>
 						<p><a href="/dave-morison/services#support" id="services-support-learn-more" class="service-btn">Learn More<Icon name="arrowRight" size="20" /></a></p>
 					</div>
@@ -116,6 +123,9 @@ import ContactForm from './ContactForm.astro';
 	}
 	section#hero {
 		padding-top: 1em;
+	}
+	section#tech {
+		padding-bottom: 2em;
 	}
 
 	#services .card {
@@ -202,6 +212,12 @@ import ContactForm from './ContactForm.astro';
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
+		align-items: center;
+		gap: 1em;
+	}
+
+	.service-card div {
+		text-align: center;
 	}
 
 	.service-card svg {
@@ -237,7 +253,7 @@ import ContactForm from './ContactForm.astro';
 			padding: 6em 4em 2em;
 		}
 		section#hero {
-			padding-top: 4em;
+			padding-top: 3em;
 		}
 
 		#pitch, #services {

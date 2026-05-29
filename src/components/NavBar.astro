@@ -7,7 +7,7 @@ const { page } = Astro.props;
 <nav>
 	<header>
 		<ul class="home">
-			<li><a id="nav-home" href="/dave-morison">Dave Morison - Web Analyst</a></li>
+			<li><a id="nav-home" href="/dave-morison">Dave Morison - Digital Analyst</a></li>
 		</ul>
 		<ul class={`nav-items ${page !== 'homePage' ? 'hide' : ''}`}>
 			<li><a id="nav-pitch" href="#pitch">Why Me?</a></li>
@@ -104,6 +104,9 @@ const { page } = Astro.props;
 		gap: 1em;
 		align-items: center;
 	}
+	ul.contact li:last-child {
+		display: none;
+	}
 
 	li {
 		list-style: none;
@@ -140,6 +143,9 @@ const { page } = Astro.props;
 
 		ul.contact {
 			order: 3;
+		}
+		ul.contact li:last-child {
+			display: block;
 		}
 	}
 </style>
