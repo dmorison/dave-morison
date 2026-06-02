@@ -1,0 +1,36 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
+<div class="footer">
+    <a id="footer-linkedin" href="https://www.linkedin.com/in/david-morison/" target="_blank" rel="noopener noreferrer">
+        <Icon name="LinkedInText" width="60" height="20" title="LinkedIn - Connect with me on LinkedIn" />
+    </a>
+</div>
+
+<style>
+    .footer {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 2em;
+		background-color: #012C3C;
+	}
+
+	.footer a {
+		display: block;
+		text-align: center;
+        width: 140px;
+		padding: 0.5em;
+		padding-bottom: 0.2em;
+		border-radius: 2em;
+		background-color: #E8F5FD;
+		text-decoration: none;
+	}
+
+	@media screen and (min-width: 768px) {
+		.footer {
+			justify-content: flex-end;
+		}
+	}
+</style>

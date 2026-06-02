@@ -4,6 +4,7 @@ import ContactForm  from '@/components/ContactForm.astro';
 import NavBar from '@/components/NavBar.astro';
 import { Image } from 'astro:assets';
 import aboutImage from '../assets/about-image.jpg';
+import googleAnalyticsBadge from '../assets/google-analytics-certified-badge.png';
 ---
 
 <Layout title="About Me">
@@ -15,13 +16,16 @@ import aboutImage from '../assets/about-image.jpg';
                     <Image src={aboutImage} alt="About Dave Morison" class="about-image" width="300" />
                     <div>
                         <h1>About Me</h1>
-                        <p>I'm a UK based digital analyst with a background in web development. I work with small business internationally specializing in Google Analytics (GA4) and Google Tag Manager (GTM).</p>
-                        <p>I implement developer-grade tracking systems that ensure the most important clicks and conversions are accounted for to help businesses make better decisions and achieve their objectives.</p>
-                        <p>I have worked as a web developer for over 12 years, of which 11 years were spent working at MoneySavingExpert.com.</p>
-                        <p>This has provided me with a deep technical understanding of websites and the ability to implement effective analytics solutions.</p>
+                        <p>I'm a UK based Digital Analytics Consultant dedicated to helping small to medium-sized business owners eliminate data blind spots and extract clear insights from their data using Google Analytics 4 (GA4) and Google Tag Manager (GTM).</p>
+                        <p>I implement developer-grade tracking solutions that ensure the most important clicks and conversions are accounted for to help business owners make better decisions and achieve their objectives.</p>
+                        <p>I have 12 years of experience as a web developer including 11 years working for MoneySavingExpert.com which is one of the most trusted, high-traffic websites in the UK.</p>
+                        <p>My deep technical understanding of websites enables me to write custom code, configure precise data layers and implement efficient tracking solutions.</p>
                         <!-- <p>During my time at MoneySavingExpert.com, along with my development responsibilities, I also took on analytics-related tasks. I helped implement tracking solutions for both developer needs and business stakeholders.</p> -->
                         <p>When I'm not working on analytics projects, you can find me mostly outdoors doing various activities from walking my dogs to hiking, cycling or swimming. Otherwise I'll be relaxing and enjoying a good book.</p>
-                        <a href="/dave-morison/services" id="about-page-services-link-btn" class="services-btn">Find out more about the services I offer</a>
+                        <p><a href="/dave-morison/services" id="about-page-services-link-btn" class="services-btn">Find out more about the services I offer</a></p>
+                        <a href="https://skillshop.credential.net/50511e36-5343-454f-a398-4dfc4b03d6e9#acc.ZUifNMlk" target="_blank" rel="noopener noreferrer">
+                            <Image src={googleAnalyticsBadge} alt="Google Analytics Certified Badge" width="150" />
+                        </a>
                     </div>
                 </section>
             </div>
@@ -48,7 +52,6 @@ import aboutImage from '../assets/about-image.jpg';
 
 	section {
         display: flex;
-        align-items: center;
         justify-content: center;
         gap: 1em;
         flex-wrap: wrap;
