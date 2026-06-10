@@ -16,7 +16,6 @@ import { web3forms_key } from '@/config/config.json';
         Message <span>*</span>
     </label>
     <textarea name="message" id="message" required></textarea>
-    <div class="h-captcha" data-captcha="true" data-theme="dark"></div>
     <button type="submit">Submit</button>
     <div id="result"></div>
 </form>
@@ -74,13 +73,6 @@ import { web3forms_key } from '@/config/config.json';
 
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
-
-        const hCaptcha = form.querySelector('textarea[name=h-captcha-response]').value;
-        
-        if (!hCaptcha) {
-            result.innerHTML = "Please complete the captcha.";
-            return;
-        };
 
         const formData = new FormData(form);
         const object = Object.fromEntries(formData);
