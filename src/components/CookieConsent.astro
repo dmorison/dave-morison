@@ -1,0 +1,198 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
+<div id="cookie-consent-banner" class="cookie-consent-banner">
+  <p>This website uses cookies for traffic analysis and to improve your experience.</p>
+  <div class="cookie-consent-actions">
+    <button id="btn-accept" type="button">Accept</button>
+    <button id="btn-decline" type="button">Decline</button>
+  </div>
+</div>
+
+<div id="cookie-consent-icon" class="cookie-consent-icon">
+    <Icon name="Cookie" size="24" />
+</div>
+
+<style>
+  .cookie-consent-icon {
+    position: fixed;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    z-index: 1000;
+    width: 24px;
+    height: 24px;
+    background-color: #9BC0DA;
+    color: #1B5B7E;
+    padding: 0.5rem;
+    border-radius: 999px;
+    cursor: pointer;
+    display: none;
+  }
+  
+  .cookie-consent-banner {
+    position: fixed;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    background: #ffffff;
+    color: #012C3C;
+    border-radius: 0.75rem;
+    box-shadow: 0 12px 35px rgba(1, 44, 60, 0.16);
+    font-family: var(--font-montserrat), Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+  }
+
+  .cookie-consent-banner p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .cookie-consent-actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .cookie-consent-actions button {
+    border: none;
+    border-radius: 999px;
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 200ms ease, background-color 200ms ease;
+  }
+
+  .cookie-consent-actions button:hover {
+    transform: translateY(-1px);
+  }
+
+  #btn-accept {
+    background-color: #1B5B7E;
+    color: #ffffff;
+  }
+
+  #btn-accept:hover {
+    background-color: #144a66;
+  }
+
+  #btn-decline {
+    background-color: #E8F5FD;
+    color: #012C3C;
+  }
+
+  #btn-decline:hover {
+    background-color: #d9eef9;
+  }
+
+  @media (max-width: 768px) {
+    .cookie-consent-icon {
+      bottom: 1rem;
+      left: 1rem;
+    }
+    
+    .cookie-consent-banner {
+      left: 1rem;
+      right: 1rem;
+      bottom: 1rem;
+      max-width: none;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .cookie-consent-actions {
+      width: 100%;
+    }
+
+    .cookie-consent-actions button {
+      flex: 1;
+    }
+  }
+</style>
+
+<script>
+    declare const gtag: (...args: unknown[]) => void;
+
+    function showBanner() {
+        const banner = document.getElementById('cookie-consent-banner');
+        const icon = document.getElementById('cookie-consent-icon');
+
+        if (banner) {
+            banner.style.display = 'flex';
+        }
+        if (icon) {
+            icon.style.display = 'none';
+        }
+    }
+
+    function hideBanner() {
+        const banner = document.getElementById('cookie-consent-banner');
+        const icon = document.getElementById('cookie-consent-icon');
+
+        if (banner) {
+            banner.style.display = 'none';
+        }
+        if (icon) {
+            icon.style.display = 'block';
+        }
+    }
+
+    function setConsent(consent: { necessary: boolean; analytics: boolean; preferences: boolean; marketing: boolean; }) {
+        const consentMode = {
+            'functionality_storage': consent.necessary ? 'granted' : 'denied',
+            'security_storage': consent.necessary ? 'granted' : 'denied',
+            'ad_storage': consent.marketing ? 'granted' : 'denied',
+            'ad_user_data': consent.marketing ? 'granted' : 'denied',
+			'ad_personalization': consent.marketing ? 'granted' : 'denied',
+            'analytics_storage': consent.analytics ? 'granted' : 'denied',
+            'personalization_storage': consent.preferences ? 'granted' : 'denied',
+        };
+        gtag('consent', 'update', consentMode);
+        localStorage.setItem('consentMode', JSON.stringify(consentMode));
+    }
+
+    const banner = document.getElementById('cookie-consent-banner');
+    const icon = document.getElementById('cookie-consent-icon');
+    const acceptButton = document.getElementById('btn-accept');
+    const declineButton = document.getElementById('btn-decline');
+
+    if (icon) {
+        icon.addEventListener('click', function() {
+            showBanner();
+        });
+    }
+
+    if (banner && acceptButton && declineButton) {
+        acceptButton.addEventListener('click', function() {
+            setConsent({
+                necessary: true,
+                analytics: true,
+                preferences: true,
+                marketing: true
+            });
+            hideBanner();
+        });
+        declineButton.addEventListener('click', function() {
+            setConsent({
+                necessary: false,
+                analytics: false,
+                preferences: false,
+                marketing: false
+            });
+            hideBanner();
+        });
+        if (localStorage.getItem('consentMode') !== null) {
+            hideBanner();
+        } else {
+            showBanner();
+        }
+    } else {
+        hideBanner();
+    }
+</script>
