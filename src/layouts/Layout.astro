@@ -2,12 +2,33 @@
 // import { google_tag_manager } from '@/config/config.json';
 import { Font } from "astro:assets";
 import Footer from '@/components/Footer.astro';
+import CookieConsent from '@/components/CookieConsent.astro';
 const { title } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
+		<!-- Google Tag Manager Consent -->
+		<script is:inline>
+			// Google Tag Manager - Data Layer
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+
+			if (localStorage.getItem('consentMode') === null) {
+				gtag('consent', 'default', {
+					'analytics_storage': 'denied',
+					'ad_storage': 'denied',
+					'ad_user_data': 'denied',
+					'ad_personalization': 'denied',
+					'functionality_storage': 'granted',
+					'security_storage': 'granted',
+					'personalization_storage': 'denied'
+				});
+			} else {
+				gtag('consent', 'default', JSON.parse(localStorage.getItem('consentMode')));
+			};
+		</script>
 		<!-- Google Tag Manager -->
 		<script is:inline>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -34,6 +55,7 @@ const { title } = Astro.props;
 		<!-- End Google Tag Manager (noscript) -->
 		<slot />
 		<Footer />
+		<CookieConsent />
 	</body>
 </html>
 
